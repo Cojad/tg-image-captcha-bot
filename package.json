@@ -1,6 +1,7 @@
 {
 	"scripts": {
-		"start": "node server.js"
+    "dev": "nodemon -x 'node server.js || (sleep 30; touch server.js)'",
+    "start": "node server.js"
 	},
 	"dependencies": {
 		"dayjs": "^1.8.15",
@@ -8,7 +9,7 @@
 		"ioredis": "^4.14.0",
 		"lodash": "^4.17.15",
 		"md5": "^2.2.1",
-		"sharp": "^0.23.0",
+		"sharp": "^0.33.3",
 		"svg-captcha": "^1.4.0",
 		"telegraf": "^3.32.0",
 		"telegraf-command-parts": "^1.0.3"
@@ -17,6 +18,15 @@
 		"eslint": "^6.1.0",
 		"eslint-config-airbnb": "^18.0.1",
 		"eslint-import-resolver-node": "^0.3.2",
-		"eslint-plugin-import": "^2.18.2"
-	}
+		"eslint-plugin-import": "^2.18.2",
+		"nodemon": "^3.1.0"
+	},
+	"nodemonConfig": {
+    "ext": "js,mjs,json",
+    "ignore": [
+      "node_modules/**/node_modules",
+      "public/**/*"
+    ],
+    "delay": 1
+  }
 }
